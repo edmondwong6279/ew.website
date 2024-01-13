@@ -1,0 +1,21 @@
+@import "@/styles/mixins.module.scss";
+
+.container {
+  padding: 10px 20px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 5px (--shadow);
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  .themeContainer {
+    height: 30px;
+    width: 30px;
+    margin: 20px;
+  }
+}

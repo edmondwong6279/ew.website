@@ -1,0 +1,60 @@
+// MIXINS
+@mixin card() {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: var(--card-background-color);
+
+  @include tablet {
+    flex-direction: row;
+    padding: 30px;
+  }
+}
+
+@mixin cardContainer() {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@mixin container() {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-inline: 20px;
+  max-width: 1200px;
+
+  @include tablet {
+    padding-inline: 40px;
+  }
+}
+
+@mixin heading() {
+  font-size: 2rem;
+  margin: 0 0 20px;
+}
+
+@mixin link() {
+  background-color: var(--link-background-color);
+  border-radius: 5px;
+  color: var(--link-text-color);
+  padding: 8px 15px;
+  align-self: center;
+}
+
+// MEDIA QUERIES
+@mixin tablet {
+  @media (min-width: #{var(--tablet)}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{var(--desktop)}) {
+    @content;
+  }
+}

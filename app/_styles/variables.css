@@ -1,0 +1,54 @@
+
+:root {
+  --primary: rgb(58, 58, 58);
+  --secondary: rgb(240, 175, 175);
+  --tertiary: rgb(178, 243, 210);
+  --shadow: rgb(104, 104, 104);
+  --background-color: rgb(246, 244, 251);
+  --card-background-color: rgb(236, 234, 244);
+  --glass: rgba(255, 255, 255, 0.1);
+
+  --subtitle: rgb(104, 104, 104);
+  --text-color: rgb(58, 58, 58);
+
+  --default-svg: rgb(104, 104, 104);
+  --footer-text-color: rgb(232, 232, 232);
+  --footer-background-color: rgb(104, 104, 104);
+
+  --link-background-color: rgb(104, 104, 104);
+  --link-text-color: rgb(246, 246, 246);
+
+  --a-visited-color: rgb(154, 22, 255);
+  --a-text-color: rgb(22, 141, 245);
+
+  --tablet: 768px;
+  --desktop: 1025px;
+}
+
+body[data-theme='dark'] {
+  --primary: rgb(246, 244, 251);
+  --secondary: rgb(178, 243, 210);
+  --tertiary: rgb(240, 175, 175);
+  --shadow: rgb(58, 58, 58);
+  --background-color: rgb(104, 104, 104);
+  --card-background-color: rgb(128, 127, 130);
+  --glass: rgba(255, 255, 255, 0.1);
+
+  --subtitle: rgb(210, 210, 210);
+  --text-color: rgb(246, 244, 251);
+
+  --default-svg: rgb(237, 237, 237);
+  --footer-text-color: rgb(239, 239, 239);
+  --footer-background-color: rgb(72, 72, 72);
+
+  --link-background-color: rgb(235, 235, 235);
+  --link-text-color: rgb(58, 58, 58);
+
+  --a-visited-color: rgb(233, 205, 255);
+  --a-text-color: rgb(201, 230, 255);
+}
+
+* {
+  margin: 0;
+  box-sizing: content-box;
+}
