@@ -6,8 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import { navBar } from "@/constants";
-import BurgerImage from "@/public/Burger.svg";
-import CrossImage from "@/public/Cross.svg";
+import BurgerImage from "@/public/burger.svg";
+import CrossImage from "@/public/cross.svg";
 
 import stylesVar from "@/styles/mixins.module.scss";
 import styles from "./styles.module.scss";
