@@ -1,0 +1,103 @@
+@import "@/styles/mixins.module.scss";
+
+.outerContainer {
+  @include cardContainer;
+
+  .innerContainer {
+    @include card;
+
+    @include tablet {
+      // Override default and make it always column
+      flex-direction: column;
+    }
+
+    .catName {
+      margin-top: 0;
+    }
+
+    .descrip {
+      @include card;
+
+      // needed so if we move the mouse quickly, the mouse can be over this
+      // div instead of the svg group
+      pointer-events: none;
+
+      background-color: rgba(255, 255, 255, 0.01);
+      backdrop-filter: blur(20px) saturate(180%);
+
+      transition: 0.2s opacity ease-in-out;
+      opacity: 0;
+      width: 70%;
+      position: absolute;
+
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+
+      @include tablet {
+        margin: 0;
+        width: 400px;
+      }
+
+      .toolTipCloseIcon {
+        pointer-events: all;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        content: "&times;";
+
+        @include tablet {
+          pointer-events: none;
+        }
+      }
+    }
+
+    .svg {
+      width: 100%;
+      fill: var(--default-svg);
+      color: var(--default-svg);
+      stroke: var(--default-svg);
+
+      .text {
+        font-size: 0.8rem;
+
+        @include tablet {
+          font-size: 1.3rem;
+        }
+      }
+
+      .bar {
+        opacity: 0.5;
+
+        &_0 {
+          @extend .bar;
+          fill: var(--purple);
+        }
+
+        &_1 {
+          @extend .bar;
+          fill: var(--pink);
+        }
+
+        &_2 {
+          @extend .bar;
+          fill: var(--green);
+        }
+
+        &_3 {
+          @extend .bar;
+          fill: var(--yellow);
+        }
+      }
+
+      .graphLine {
+        opacity: 0.5;
+        stroke-dasharray: 4;
+        stroke-width: 1px;
+      }
+      .divider {
+        stroke-width: 2px;
+      }
+    }
+  }
+}

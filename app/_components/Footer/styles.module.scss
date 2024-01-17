@@ -3,10 +3,9 @@
 .footer {
   width: 100%;
   padding: 10px 20px;
-  height: 50px;
   position: relative;
   text-align: center;
-  box-shadow: 0 0 5px (--shadow);
+  box-shadow: 0 0 5px var(--shadow);
   background-color: var(--footer-background-color);
   color: var(--footer-text-color);
   display: flex;
@@ -17,6 +16,6 @@
   .themeContainer {
     height: 30px;
     width: 30px;
-    margin: 20px;
+    margin: 0 20px;
   }
 }

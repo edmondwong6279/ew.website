@@ -7,5 +7,7 @@ export { ContentCard } from "./ContentCard";
 export { ContextWrapper } from "./ContextWrapper";
 export { Footer } from "./Footer";
 export { Navigation } from "./Navigation";
+export { PortfolioItems } from "./PortfolioItems";
+export { SkillsGraph } from "./SkillsGraph";
 export { Spinner } from "./Spinner";
 export { ThemeToggle } from "./ThemeToggle";

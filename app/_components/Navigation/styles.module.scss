@@ -79,12 +79,13 @@
 
       .link:hover,
       .current {
-        box-shadow: 0 0 20px var(--shadow);
+        box-shadow: 0 0 8px var(--shadow);
       }
 
       .home {
         padding: 10px 20px;
         font-size: 1rem;
+        line-height: 1rem;
       }
 
       .navList {
