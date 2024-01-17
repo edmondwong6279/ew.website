@@ -1,0 +1,52 @@
+@import "@/styles/mixins.module.scss";
+
+.cats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.portfolioItems {
+  @include cardContainer;
+
+  .card {
+    @include card;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .vid {
+      width: 200px;
+      height: 200px;
+
+      @include tablet {
+        width: 300px;
+        height: 300px;
+      }
+
+      @include desktop {
+        width: 400px;
+        height: 400px;
+      }
+    }
+
+    .textContainer {
+      margin: 20px;
+
+      .linkContainer {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        gap: 20px;
+
+        @include tablet {
+          flex-direction: row;
+          gap: 0;
+        }
+
+        .link {
+          @include link;
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,6 @@
 
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import cn from "classnames";
 import { motion } from "framer-motion";
@@ -93,7 +92,7 @@ export function Navigation() {
               setMobileMenuIsOpen(false);
             }}
           >
-            <h1 className={styles.title}>Ed/Wong</h1>
+            <h3 className={styles.title}>Ed/Wong</h3>
           </Link>
           {viewIsMobile ? (
             <div className={styles.hamburgerContainer}>

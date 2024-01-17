@@ -10,39 +10,37 @@ export default async function About() {
   } = await getData("about-page?populate=deep");
 
   return (
-    <section className={styles.homeSection}>
-      <header className={styles.homeTitle}>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.tagline}>{description}</p>
+    <section className={styles.aboutSection}>
+      <header>
+        <h2>{title}</h2>
+        <p>{description}</p>
       </header>
       <div className={styles.container}>
         {aboutGroups.map((aboutGroup, idx: number) => (
           <div className={styles.section} key={idx}>
-            <h2>{aboutGroup.groupTitle}</h2>
-            {aboutGroup.aboutItems.map((aboutItem, idx2: number) => (
-              <div
-                className={cn(styles.card, {
-                  [styles.flip]: idx2 % 2 === 0
-                })}
-                key={idx2}
-              >
-                <div className={styles.textContainer}>
+            <h3>{aboutGroup.groupTitle}</h3>
+            {aboutGroup.aboutItems.map(
+              ({ title, subtitle, mediaUrl, description }, idx2: number) => (
+                <div className={styles.card} key={idx2}>
                   <div className={styles.headingContainer}>
-                    <h3 className={styles.title}>{aboutItem.title}</h3>
-                    {aboutItem.subtitle !== null && (
-                      <h4 className={styles.subtitle}>{aboutItem.subtitle}</h4>
-                    )}
+                    <h4 className={styles.title}>{title}</h4>
+                    <h5 className={styles.subtitle}>{subtitle}</h5>
                   </div>
-                  <ReactMarkdown>{aboutItem.description}</ReactMarkdown>
+                  {mediaUrl && (
+                    <Image
+                      className={cn(styles.img, {
+                        [styles.flip]: idx2 % 2 === 0
+                      })}
+                      src={mediaUrl}
+                      alt={`Image of- ${title}`}
+                      width={300}
+                      height={300}
+                    />
+                  )}
+                  <ReactMarkdown>{description}</ReactMarkdown>
                 </div>
-                <Image
-                  src={aboutItem.mediaUrl}
-                  alt={`image- ${aboutItem.title}`}
-                  width={400}
-                  height={400}
-                />
-              </div>
-            ))}
+              )
+            )}
           </div>
         ))}
       </div>

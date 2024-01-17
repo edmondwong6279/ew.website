@@ -1,24 +1,27 @@
 @import "@/styles/mixins.module.scss";
 
-.homeSection {
+.aboutSection {
   @include pageWidthMixin;
-}
+  @include flexCol;
+  gap: 20px;
 
-.container {
-  .section {
-    @include cardContainer;
-    margin-bottom: 20px;
+  .container {
+    .section {
+      @include cardContainer;
+      margin-bottom: 20px;
 
-    .card {
-      @include card;
-      // align-items: center;
+      .card {
+        @include card;
+        @include flexCol;
 
-      .textContainer {
-        margin: 0 20px;
+        @include tablet {
+          display: block;
+        }
 
         .headingContainer {
           display: flex;
           flex-direction: column;
+          align-items: center;
           gap: 0;
 
           @include tablet {
@@ -45,20 +48,20 @@
             }
           }
         }
-      }
 
-      .imageContainer {
-        display: flex;
-        margin: 10px;
-        justify-content: center;
-      }
-    }
+        .img {
+          align-self: center;
 
-    .flip {
-      flex-direction: column;
-
-      @include tablet {
-        flex-direction: row-reverse;
+          @include tablet {
+            float: left;
+            margin: 20px;
+          }
+          &.flip {
+            @include tablet {
+              float: right;
+            }
+          }
+        }
       }
     }
   }

@@ -85,44 +85,48 @@ export type AboutPageType = {
         title: string;
         description: string;
         subtitle: string;
-        mediaUrl: string;
+        mediaUrl?: string;
       }[];
     }[];
   };
 };
+
+export type PortfolioItems = {
+  id: number;
+  title: string;
+  description: string;
+  repositoryUrl: string;
+  projectUrl: string;
+  mediaUrl: string;
+}[];
 
 export type PortfolioPageType = {
   id: number;
   attributes: DateAttribute & {
     title: string;
     description: string;
-    portfolioItems: {
-      id: number;
-      title: string;
-      description: string;
-      repositoryUrl: string;
-      projectUrl: string;
-      mediaUrl: string;
-    }[];
+    portfolioItems: PortfolioItems;
   };
 };
+
+export type SkillGroups = {
+  id: number;
+  groupName: string;
+  groupDescription?: string;
+  skills: {
+    id: number;
+    title: string;
+    description: string;
+    value: number;
+  }[];
+}[];
 
 export type SkillsPageType = {
   id: number;
   attributes: DateAttribute & {
     title: string;
     description: string;
-    skillGroups: {
-      id: number;
-      groupName: string;
-      groupDescription: string;
-      skills: {
-        id: number;
-        title: string;
-        description: string;
-        value: number;
-      }[];
-    }[];
+    skillGroups: SkillGroups;
   };
 };
 

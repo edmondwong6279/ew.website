@@ -1,24 +1,4 @@
 // MIXINS
-@mixin h1() {
-  font-size: 3.75rem;
-  line-height: 6rem;
-}
-
-@mixin h2() {
-  font-size: 2rem;
-  line-height: 3rem;
-}
-
-@mixin h3() {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-@mixin h4() {
-  font-size: 1rem;
-  line-height: 2rem;
-}
-
 @mixin link() {
   background-color: var(--link-background-color);
   border-radius: 5px;
@@ -52,13 +32,13 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 5px var(--shadow);
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  // display: flex;
+  // justify-content: space-between;
+  // flex-direction: column;
   background-color: var(--card-background-color);
 
   @include tablet {
-    flex-direction: row;
+    // flex-direction: row;
     padding: 30px;
   }
 }

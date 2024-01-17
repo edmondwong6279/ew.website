@@ -35,13 +35,6 @@
 
     @include tablet {
     }
-
-    .title {
-      @include h1;
-    }
-    .tagline {
-      @include h4;
-    }
   }
 
   .homeContent {
