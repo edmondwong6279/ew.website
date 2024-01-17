@@ -18,11 +18,8 @@
   --link-background-color: rgb(104, 104, 104);
   --link-text-color: rgb(246, 246, 246);
 
-  --a-visited-color: rgb(154, 22, 255);
-  --a-text-color: rgb(22, 141, 245);
-
-  --tablet: 768px;
-  --desktop: 1025px;
+  --a-visited-color: rgb(194, 132, 242);
+  --a-text-color: rgb(32, 130, 215);
 }
 
 body[data-theme='dark'] {
@@ -45,10 +42,38 @@ body[data-theme='dark'] {
   --link-text-color: rgb(58, 58, 58);
 
   --a-visited-color: rgb(233, 205, 255);
-  --a-text-color: rgb(201, 230, 255);
+  --a-text-color: rgb(123, 186, 240);
 }
 
 * {
   margin: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  font-weight: 400;
+  text-decoration-thickness: 1px;
+}
+
+a {
+  color: var(--a-text-color);
+}
+
+a:visited {
+  color: var(--a-visited-color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100svh;
+}
+
+p, li {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+img {
+  border-radius: 5px;
+  object-fit: cover;
 }

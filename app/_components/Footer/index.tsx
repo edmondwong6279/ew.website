@@ -7,16 +7,19 @@ import styles from "./styles.module.scss";
 
 export function Footer() {
   const { theme } = useContext(ThemeContext);
+
   return (
-    <footer className={styles.container}>
-      <div className={styles.footerText}>
-        {theme === "light" && (
-          <p>Too light on your eyes? Try switching to dark mode.</p>
-        )}
-        {theme === "dark" && (
-          <p>Not a fan of dark mode? Try switching to light mode.</p>
-        )}
-      </div>
+    <footer className={styles.footer}>
+      {theme === "light" && (
+        <p className={styles.footerText}>
+          Too light on your eyes? Try switching to dark mode.
+        </p>
+      )}
+      {theme === "dark" && (
+        <p className={styles.footerText}>
+          Not a fan of dark mode? Try switching to light mode.
+        </p>
+      )}
       <div className={styles.themeContainer}>
         <ThemeToggle />
       </div>

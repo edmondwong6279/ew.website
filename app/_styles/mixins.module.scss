@@ -1,4 +1,53 @@
 // MIXINS
+@mixin h1() {
+  font-size: 3.75rem;
+  line-height: 6rem;
+}
+
+@mixin h2() {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+@mixin h3() {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@mixin h4() {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+@mixin link() {
+  background-color: var(--link-background-color);
+  border-radius: 5px;
+  color: var(--link-text-color);
+  padding: 8px 15px;
+  align-self: center;
+}
+
+@mixin pageWidthMixin() {
+  margin: 0 auto;
+  padding: 10px 20px;
+  max-width: 1200px;
+
+  @include tablet {
+    padding: 20px 40px;
+  }
+}
+
+@mixin flexCol() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexColCentered() {
+  @include flexCol;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin card() {
   padding: 20px;
   border-radius: 10px;
@@ -33,28 +82,24 @@
   }
 }
 
-@mixin heading() {
-  font-size: 2rem;
-  margin: 0 0 20px;
-}
-
-@mixin link() {
-  background-color: var(--link-background-color);
-  border-radius: 5px;
-  color: var(--link-text-color);
-  padding: 8px 15px;
-  align-self: center;
-}
-
 // MEDIA QUERIES
+$tablet: 768;
+$desktop: 1025;
+
 @mixin tablet {
-  @media (min-width: #{var(--tablet)}) {
+  @media (min-width: #{$tablet}px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{var(--desktop)}) {
+  @media (min-width: #{$desktop}px) {
     @content;
   }
+}
+
+// this is needed when we want the variables from css in javascript
+// e.g. navbar needs to know the breakpoint for tablet
+:export {
+  tablet: $tablet;
 }

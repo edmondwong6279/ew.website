@@ -1,0 +1,68 @@
+@import "@/styles/mixins.module.scss";
+
+// for layout.tsx
+.body {
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--primary);
+
+  .mainContainer {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// for page.tsx
+.homeSection {
+  @include pageWidthMixin;
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+
+  @include desktop {
+    gap: 20px;
+  }
+
+  .homeTitle {
+    @include flexColCentered;
+
+    @include tablet {
+    }
+
+    .title {
+      @include h1;
+    }
+    .tagline {
+      @include h4;
+    }
+  }
+
+  .homeContent {
+    @include flexColCentered;
+    gap: 10px;
+
+    @include desktop {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .image {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+
+      @include desktop {
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+}

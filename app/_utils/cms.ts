@@ -32,7 +32,8 @@ export const getData = async <T extends AllInputTypes>(
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.CMS_KEY}`
     },
-    next: { revalidate: 3600 } // one hour cache
+    cache: "no-store"
+    // next: { revalidate: 3600 } // one hour cache
   });
 
   if (!response.ok) {

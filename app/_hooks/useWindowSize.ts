@@ -3,8 +3,8 @@ import { useState, useEffect, MutableRefObject, useRef } from "react";
 
 export const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0
+    width: Infinity,
+    height: Infinity
   });
 
   useEffect(() => {

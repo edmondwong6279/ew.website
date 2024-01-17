@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 
 import { ThemeContext } from "@/context";
 
-import styles from "./styles.module.scss";
-
 export function ContextWrapper({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -25,7 +23,8 @@ export function ContextWrapper({ children }: { children: React.ReactNode }) {
       localStorage.setItem("theme", newTheme);
     }
 
-    document.body.style.transition = "all 0.2s ease-in-out";
+    document.body.style.transition = "color 0.2s ease-in-out";
+    document.body.style.transition = "background-color 0.2s ease-in-out";
   }, []);
 
   useEffect(() => {
@@ -36,7 +35,7 @@ export function ContextWrapper({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={styles.outerMostContainer}>{children}</div>
+      {children}
     </ThemeContext.Provider>
   );
 }

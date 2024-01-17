@@ -2,5 +2,5 @@ export const navBar = [
   { name: "About", link: "/about" },
   { name: "Skills", link: "/skills" },
   { name: "Portfolio", link: "/portfolio" },
-  { name: "Blogs", link: "/blog" }
+  { name: "Blog", link: "/blog" }
 ];
