@@ -15,35 +15,48 @@ export async function PortfolioItems({
 }) {
   return (
     <div className={styles.portfolioItems}>
-      {portfolioItems.map((item, idx) => (
-        <div className={styles.card} key={idx}>
-          {/* <PortfolioVideo link={item.media} idx={idx} key={idx} /> */}
-          <div className={styles.textContainer}>
-            <h3>{item.title}</h3>
-            <ReactMarkdown>{item.description}</ReactMarkdown>
-            <div className={styles.linkContainer}>
-              {item.repositoryUrl !== null && (
-                <Link
-                  href={item.repositoryUrl}
-                  className={styles.link}
-                  target="_blank"
-                >
-                  Repo Link
-                </Link>
-              )}
-              {item.projectUrl !== null && (
-                <Link
-                  href={item.projectUrl}
-                  className={styles.link}
-                  target="_blank"
-                >
-                  Project Link
-                </Link>
+      {portfolioItems.map(
+        ({ title, description, mediaUrl, repositoryUrl, projectUrl }, idx) => (
+          <div className={styles.card} key={idx}>
+            <video
+              key={idx}
+              className={styles.vid}
+              muted
+              playsInline
+              autoPlay
+              loop
+            >
+              <source src={mediaUrl} type={"video/mp4"} />
+            </video>{" "}
+            <div className={styles.textContainer}>
+              <h3>{title}</h3>
+              <ReactMarkdown>{description}</ReactMarkdown>
+              {(repositoryUrl !== null || projectUrl !== null) && (
+                <div className={styles.linkContainer}>
+                  {repositoryUrl !== null && (
+                    <Link
+                      href={repositoryUrl}
+                      className={styles.link}
+                      target="_blank"
+                    >
+                      Repo Link
+                    </Link>
+                  )}
+                  {projectUrl !== null && (
+                    <Link
+                      href={projectUrl}
+                      className={styles.link}
+                      target="_blank"
+                    >
+                      Project Link
+                    </Link>
+                  )}
+                </div>
               )}
             </div>
           </div>
-        </div>
-      ))}
+        )
+      )}
     </div>
   );
 }

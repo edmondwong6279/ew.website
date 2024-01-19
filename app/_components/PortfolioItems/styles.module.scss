@@ -1,10 +1,5 @@
 @import "@/styles/mixins.module.scss";
 
-.cats {
-  display: flex;
-  justify-content: space-around;
-}
-
 .portfolioItems {
   @include cardContainer;
 
@@ -13,10 +8,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
 
     .vid {
-      width: 200px;
-      height: 200px;
+      width: 100%;
+      height: 100%;
 
       @include tablet {
         width: 300px;
@@ -33,6 +33,7 @@
       margin: 20px;
 
       .linkContainer {
+        margin: 10px;
         display: flex;
         justify-content: space-around;
         flex-direction: column;

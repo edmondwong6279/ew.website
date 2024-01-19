@@ -9,8 +9,10 @@ export default async function Portfolio() {
 
   return (
     <section className={styles.portfolioSection}>
-      <h1 className={styles.heading}>{title}</h1>
-      <p>{description}</p>
+      <header>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </header>
       <PortfolioItems portfolioItems={portfolioItems} />
     </section>
   );

@@ -10,7 +10,7 @@ export default async function Skills() {
 
   return (
     <section className={styles.skillsSection}>
-      <h1 className={styles.heading}>{title}</h1>
+      <h2 className={styles.heading}>{title}</h2>
       <p className={styles.description}>{description}</p>
       <p className={cn(styles.desktopTip, styles.tooltip)}>
         Hover over each skill to see more information.

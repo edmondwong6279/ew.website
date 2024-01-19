@@ -2,4 +2,6 @@
 
 .portfolioSection {
   @include pageWidthMixin;
+  @include flexCol;
+  gap: 20px;
 }
