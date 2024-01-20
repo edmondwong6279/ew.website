@@ -7,16 +7,6 @@
   align-self: center;
 }
 
-@mixin pageWidthMixin() {
-  margin: 0 auto;
-  padding: 10px 20px;
-  max-width: 1200px;
-
-  @include tablet {
-    padding: 20px 40px;
-  }
-}
-
 @mixin flexCol() {
   display: flex;
   flex-direction: column;
@@ -28,10 +18,31 @@
   align-items: center;
 }
 
+@mixin pageWidthMixin() {
+  @include flexCol();
+  flex: auto;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  gap: 20px;
+
+  @include tablet {
+    padding: 20px 40px;
+  }
+}
+
+@mixin cardContainer() {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 @mixin card() {
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 5px var(--shadow);
+  box-shadow: 0 12px 20px -10px var(--shadow);
   // display: flex;
   // justify-content: space-between;
   // flex-direction: column;
@@ -41,12 +52,6 @@
     // flex-direction: row;
     padding: 30px;
   }
-}
-
-@mixin cardContainer() {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 @mixin container() {

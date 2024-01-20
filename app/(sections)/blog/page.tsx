@@ -1,11 +1,44 @@
+import Link from "next/link";
 import { getData } from "@/utils";
-import styles from "./page.module.scss";
+import styles from "./styles.module.scss";
 
 export default async function Blog() {
-  await getData("blog-page?populate=deep");
+  const [
+    {
+      attributes: { title, description }
+    },
+    blogs
+  ] = await Promise.all([
+    getData("blog-page?populate=deep"),
+    getData("blogs?populate=deep")
+  ]);
 
-  await getData("blogs?populate=deep");
-  await getData(`blogs?filters[slug][$eq]=asdf&populate=deep`);
+  return (
+    <section className={styles.blogSection}>
+      <header>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </header>
+      <div className={styles.cardsContainer}>
+        {blogs.map(
+          (
+            { attributes: { title, description, publishedAt, slug } },
+            idx: number
+          ) => {
+            const date = new Date(publishedAt).toLocaleDateString("en-GB");
 
-  return <section>TODO Blog page</section>;
+            return (
+              <Link href={`/blog/${slug}`} key={idx} className={styles.link}>
+                <div className={styles.card}>
+                  <h1 className={styles.blogTitle}>{title}</h1>
+                  <h5 className={styles.blogDate}>Published: {date}</h5>
+                  <p>{description}</p>
+                </div>
+              </Link>
+            );
+          }
+        )}
+      </div>
+    </section>
+  );
 }

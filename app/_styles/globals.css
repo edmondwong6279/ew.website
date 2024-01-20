@@ -86,11 +86,11 @@ p, li {
 img {
   border-radius: 5px;
   object-fit: cover;
-  box-shadow: 0 0 5px var(--shadow);
+  box-shadow: 0 12px 20px -10px var(--shadow);
 }
 
 h1 {
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 6rem;
 }
 

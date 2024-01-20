@@ -1,0 +1,45 @@
+@import "@/styles/mixins.module.scss";
+
+.blogSlugSection {
+  @include pageWidthMixin;
+
+  .blogContainer {
+    @include flexCol;
+    gap: 20px;
+
+    .blogContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      img {
+        margin: 10px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        align-self: flex-start;
+      }
+
+      p {
+        text-align: left;
+      }
+
+      iframe {
+        max-width: 100%;
+      }
+    }
+
+    .loadingContent {
+      flex: 1;
+    }
+  }
+
+  .backLink {
+    @include link;
+  }
+}

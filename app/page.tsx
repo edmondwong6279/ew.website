@@ -19,7 +19,7 @@ export default async function Home() {
     <section className={styles.homeSection}>
       <header className={styles.homeTitle}>
         <h1 className={styles.title}>{title}</h1>
-        <p className={styles.tagline}>{tagline}</p>
+        <p>{tagline}</p>
       </header>
       <div className={styles.homeContent}>
         <Image
@@ -31,7 +31,6 @@ export default async function Home() {
           sizes="(max-width: 768px) 300px, 400px"
         />
         <div>
-          {/* TODO check if this is the best package for markdown from strapi */}
           <ReactMarkdown>{description}</ReactMarkdown>
           <p>Contact Details and links:</p>
           <ul className={styles.list}>

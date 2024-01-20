@@ -9,5 +9,5 @@ export { Footer } from "./Footer";
 export { Navigation } from "./Navigation";
 export { PortfolioItems } from "./PortfolioItems";
 export { SkillsGraph } from "./SkillsGraph";
-export { Spinner } from "./Spinner";
+export { Loader } from "./Loader";
 export { ThemeToggle } from "./ThemeToggle";

@@ -17,14 +17,14 @@
   }
 }
 
+// for loading.tsx
+.loadingContainer {
+  @include flexColCentered;
+}
+
 // for page.tsx
 .homeSection {
   @include pageWidthMixin;
-  display: flex;
-  flex: auto;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: 10px;
 
   @include desktop {
     gap: 20px;
@@ -32,9 +32,6 @@
 
   .homeTitle {
     @include flexColCentered;
-
-    @include tablet {
-    }
   }
 
   .homeContent {

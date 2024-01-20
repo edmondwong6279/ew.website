@@ -15,14 +15,10 @@
     z-index: 1;
     display: flex;
     width: 100%;
-
     min-height: 90px;
-
     justify-content: center;
-
     backdrop-filter: blur(10px) saturate(180%);
     overflow: hidden;
-
     box-sizing: border-box;
     transition: box-shadow 0.2s ease-in-out;
 
@@ -31,7 +27,7 @@
     // taken into account if we use 100vh
     // https://github.com/framer/motion/issues/368
     .navBarInner {
-      padding: 20px;
+      padding: 10px;
       box-sizing: border-box;
       width: 100%;
       display: flex;
@@ -67,19 +63,47 @@
 
       .link {
         @include link;
+        text-decoration: none;
         font-size: 1.5rem;
-
-        box-shadow: 0 0 0px var(--shadow);
+        // just transition the transparency of the box-shadow
+        box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0);
         transition: all 0.15s ease-in-out;
+        position: relative;
 
         @include tablet {
           font-size: 1rem;
         }
       }
 
-      .link:hover,
-      .current {
-        box-shadow: 0 0 8px var(--shadow);
+      .link::after {
+        content: "";
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 70%;
+        height: 0.1em;
+        background-color: var(--link-text-color);
+        transition: transform 300ms;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      // Is this convoluted? Yes.
+      // Does it look nice and feel nice? I think so.
+
+      // underline if current section or hover
+      .link:hover::after,
+      .current.link::after {
+        transform: scale(1);
+      }
+
+      // show shadow if current or hover
+      // but not home for either case
+      .current:not(.home),
+      .link:hover:not(.home) {
+        box-shadow: 0 12px 20px -10px var(--shadow);
       }
 
       .home {

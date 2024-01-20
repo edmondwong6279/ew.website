@@ -1,0 +1,37 @@
+@import "@/styles/mixins.module.scss";
+
+.blogSection {
+  @include pageWidthMixin;
+
+  .cardsContainer {
+    @include cardContainer;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .link {
+      text-decoration: none;
+
+      .card {
+        @include card;
+        @include flexCol;
+        color: var(--text-color);
+        text-decoration: none;
+        justify-content: space-between;
+        gap: 10px;
+        transition: box-shadow 0.3s ease-in-out;
+
+        @include tablet {
+          gap: 20px;
+        }
+      }
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 20px 0px var(--shadow);
+    }
+  }
+}

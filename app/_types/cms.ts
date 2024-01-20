@@ -137,9 +137,10 @@ export type BlogType = {
     description: string;
     content: string;
     slug: string;
+    postDate: string;
   };
 };
 
 export type BlogManyResult = BlogType[];
 
-export type BlogSingleResult = [BlogType];
+export type BlogSingleResult = [BlogType] | [];
