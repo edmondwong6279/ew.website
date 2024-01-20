@@ -1,19 +1,21 @@
 "use client";
 
-import styles from "./styles.module.scss";
 import React, { useContext } from "react";
-import classNames from "classnames";
-import { ThemeContext } from "@/app/_context";
+import Image from "next/image";
+import cn from "classnames";
+
+import { ThemeContext } from "@/context";
 import Sun from "@/public/sun.svg";
 import Moon from "@/public/moon.svg";
-import Image from "next/image";
+
+import styles from "./styles.module.scss";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <div
-      className={classNames(styles.switch, {
+      className={cn(styles.switch, {
         [styles.light]: theme === "light",
         [styles.dark]: theme === "dark"
       })}

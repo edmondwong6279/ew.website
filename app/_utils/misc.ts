@@ -1,5 +1,8 @@
 /**
- * pause code execution by awaiting a call of this
+ * Pause code execution by awaiting this.
+ *
+ * Just for debugging really
+ *
  * @param ms millisconds you wish to sleep for
  * @returns a promise that resolves when the timer is finished
  */

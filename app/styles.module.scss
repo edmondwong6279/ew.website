@@ -35,23 +35,17 @@
   }
 
   .homeContent {
-    @include flexColCentered;
-    gap: 10px;
-
-    @include desktop {
-      flex-direction: row;
-      gap: 20px;
-    }
-
     .image {
+      float: left;
       aspect-ratio: 1/1;
       object-fit: cover;
       width: 100%;
       height: auto;
+      margin: 20px 0;
 
-      @include desktop {
-        width: 500px;
-        height: 500px;
+      @include tablet {
+        margin: 0 20px 20px 0;
+        width: 40%;
       }
     }
   }

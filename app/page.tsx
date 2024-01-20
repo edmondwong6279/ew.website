@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+
+import { getData } from "@/utils";
 
 import styles from "./styles.module.scss";
-import { getData } from "@/utils";
 
 /**
  * Home landing page
@@ -19,7 +21,7 @@ export default async function Home() {
     <section className={styles.homeSection}>
       <header className={styles.homeTitle}>
         <h1 className={styles.title}>{title}</h1>
-        <p>{tagline}</p>
+        <p style={{ textAlign: "justify" }}>{tagline}</p>
       </header>
       <div className={styles.homeContent}>
         <Image
@@ -30,23 +32,22 @@ export default async function Home() {
           height={0}
           sizes="(max-width: 768px) 300px, 400px"
         />
-        <div>
-          <ReactMarkdown>{description}</ReactMarkdown>
-          <p>Contact Details and links:</p>
-          <ul className={styles.list}>
-            {contactItems.map((contactItem, idx: number) => (
-              <li key={idx} className={styles.listItem}>
-                <Link
-                  href={contactItem.link}
-                  className={styles.link}
-                  target="_blank"
-                >
-                  {contactItem.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{description}</ReactMarkdown>
+        <br />
+        <p>Contact details and links:</p>
+        <ul className={styles.list}>
+          {contactItems.map((contactItem, idx: number) => (
+            <li key={idx} className={styles.listItem}>
+              <Link
+                href={contactItem.link}
+                className={styles.link}
+                target="_blank"
+              >
+                {contactItem.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

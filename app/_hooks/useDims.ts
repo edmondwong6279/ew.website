@@ -1,5 +1,6 @@
-import { Dims } from "@/types";
 import { useState, useEffect, MutableRefObject, useRef } from "react";
+
+import { Dims } from "@/types";
 
 export const useDims = <T>(): [MutableRefObject<T | null>, Dims] => {
   const ref = useRef<T | null>(null);

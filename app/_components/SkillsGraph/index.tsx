@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./styles.module.scss";
 import { motion } from "framer-motion";
+
 import { useDims, useWindowSize } from "@/hooks";
 import { SkillGroups } from "@/types";
+
+import styles from "./styles.module.scss";
 
 /**
  * SVG here is broken into xUnits

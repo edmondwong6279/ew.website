@@ -8,13 +8,12 @@ import { motion } from "framer-motion";
 import { Spiral as Hamburger } from "hamburger-react";
 
 import { navBar } from "@/constants";
-import stylesVar from "@/styles/mixins.module.scss";
 import { useWindowSize } from "@/hooks";
-import { ThemeContext } from "@/app/_context";
-
-import styles from "./styles.module.scss";
-
+import { ThemeContext } from "@/context";
 import { ThemeToggle } from "@/components";
+
+import stylesVar from "@/styles/mixins.module.scss";
+import styles from "./styles.module.scss";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);

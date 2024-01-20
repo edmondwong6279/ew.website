@@ -1,12 +1,18 @@
 import Link from "next/link";
-import { getData } from "@/utils";
-import styles from "./styles.module.scss";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-export default async function Blog({ params }: { params: { slug: string } }) {
-  // Do we need to put some sort of protection on this?
+import { getData } from "@/utils";
+
+import styles from "./styles.module.scss";
+
+export default async function BlogPage({
+  params
+}: {
+  params: { slug: string };
+}) {
+  // TODO Do we need to put some sort of protection on this?
   const blogResult = await getData(
     `blogs?filters[slug][$eq]=${params.slug}&sort[0]=postDate&populate=deep`
   );

@@ -1,8 +1,10 @@
 "use client";
 
-import { ThemeContext } from "@/context";
 import { useContext } from "react";
+
+import { ThemeContext } from "@/context";
 import { ThemeToggle } from "@/components";
+
 import styles from "./styles.module.scss";
 
 export function Footer() {

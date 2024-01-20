@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import { getData } from "@/utils";
+
 import styles from "./styles.module.scss";
 
 export default async function Blog() {

@@ -1,8 +1,10 @@
-import { getData } from "@/utils";
-import styles from "./page.module.scss";
-import cn from "classnames";
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import cn from "classnames";
+
+import { getData } from "@/utils";
+
+import styles from "./page.module.scss";
 
 export default async function About() {
   const {

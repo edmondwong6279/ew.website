@@ -1,7 +1,9 @@
-import { getData } from "@/utils";
-import styles from "./page.module.scss";
 import cn from "classnames";
-import { SkillsGraph } from "@/app/_components";
+
+import { getData } from "@/utils";
+import { SkillsGraph } from "@/components";
+
+import styles from "./page.module.scss";
 
 export default async function Skills() {
   const {

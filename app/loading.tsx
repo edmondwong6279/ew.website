@@ -1,4 +1,5 @@
 import { Loader } from "@/components";
+
 import styles from "./styles.module.scss";
 
 /**

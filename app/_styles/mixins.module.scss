@@ -43,9 +43,6 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 12px 20px -10px var(--shadow);
-  // display: flex;
-  // justify-content: space-between;
-  // flex-direction: column;
   background-color: var(--card-background-color);
 
   @include tablet {

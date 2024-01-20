@@ -91,14 +91,16 @@ export type AboutPageType = {
   };
 };
 
-export type PortfolioItems = {
+export type PortfolioItem = {
   id: number;
   title: string;
   description: string;
   repositoryUrl: string;
   projectUrl: string;
   mediaUrl: string;
-}[];
+};
+
+export type PortfolioItems = PortfolioItem[];
 
 export type PortfolioPageType = {
   id: number;

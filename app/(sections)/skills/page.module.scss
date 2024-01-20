@@ -2,4 +2,20 @@
 
 .skillsSection {
   @include pageWidthMixin;
+
+  .desktopTip {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .mobileTip {
+    display: block;
+
+    @include desktop {
+      display: none;
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import { getData } from "@/utils";
+import { PortfolioItem } from "@/components";
+
 import styles from "./page.module.scss";
-import { PortfolioItems } from "@/components";
 
 export default async function Portfolio() {
   const {
@@ -13,7 +14,11 @@ export default async function Portfolio() {
         <h2>{title}</h2>
         <p>{description}</p>
       </header>
-      <PortfolioItems portfolioItems={portfolioItems} />
+      <div className={styles.portfolioItems}>
+        {portfolioItems.map((portfolioItem, idx) => (
+          <PortfolioItem portfolioItem={portfolioItem} key={idx} />
+        ))}
+      </div>
     </section>
   );
 }

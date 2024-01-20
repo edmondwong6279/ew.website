@@ -16,7 +16,7 @@ To run this project locally, along with a local instance of strapi, ensure you h
 
 ## Setting up the project
 
-1. Clone the CMS repository and follow the instructions there to set it up
+1. Clone the CMS repository and follow the instructions there to set it up. Ensure the CMS server is running.
 
 2. After starting the strapi server, get an API token with read permissions. Put this in a `.env.local` file (along with the public strapi url). See `.env.example` for an example.
 
