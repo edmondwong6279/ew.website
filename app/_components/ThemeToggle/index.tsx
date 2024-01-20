@@ -14,33 +14,35 @@ export function ThemeToggle() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <div
-      className={cn(styles.switch, {
-        [styles.light]: theme === "light",
-        [styles.dark]: theme === "dark"
-      })}
-      onClick={() => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        setTheme(newTheme);
-      }}
-    >
-      <Image
-        priority
-        className={styles.themeIcon}
-        alt={"Light mode image"}
-        src={Sun}
-        width={50}
-        height={50}
-      />
-      <Image
-        priority
-        className={styles.themeIcon}
-        alt={"Dark mode image"}
-        src={Moon}
-        width={50}
-        height={50}
-      />
+    <div className={styles.container}>
+      <div
+        className={cn(styles.switch, {
+          [styles.light]: theme === "light",
+          [styles.dark]: theme === "dark"
+        })}
+        onClick={() => {
+          const newTheme = theme === "light" ? "dark" : "light";
+          localStorage.setItem("theme", newTheme);
+          setTheme(newTheme);
+        }}
+      >
+        <Image
+          priority
+          className={styles.themeIcon}
+          alt={"Light mode image"}
+          src={Sun}
+          width={30}
+          height={30}
+        />
+        <Image
+          priority
+          className={styles.themeIcon}
+          alt={"Dark mode image"}
+          src={Moon}
+          width={30}
+          height={30}
+        />
+      </div>
     </div>
   );
 }
