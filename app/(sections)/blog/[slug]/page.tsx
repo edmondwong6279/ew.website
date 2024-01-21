@@ -26,6 +26,8 @@ export default async function BlogPage({
     attributes: { title, postDate, content }
   } = blogResult[0];
 
+  const postDateFormatted = new Date(postDate).toLocaleDateString("en-GB");
+
   return (
     <section className={styles.blogSlugSection}>
       <header>
@@ -36,7 +38,7 @@ export default async function BlogPage({
       <div className={styles.blogContainer}>
         <div className={styles.blogHeading}>
           <h1 className={styles.blogTitle}>{title}</h1>
-          <h5 className={styles.blogDate}>Published: {postDate}</h5>
+          <h5 className={styles.blogDate}>Published: {postDateFormatted}</h5>
         </div>
         <div className={styles.blogContent}>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
