@@ -15,9 +15,18 @@ export async function PortfolioItem({
 }) {
   return (
     <div className={styles.card}>
-      <video className={styles.vid} muted playsInline autoPlay loop>
+      <video
+        className={styles.vid}
+        muted
+        playsInline
+        autoPlay
+        loop
+        poster={
+          "https://res.cloudinary.com/dtawgkgnl/image/upload/portfolio/images/loader_bdh22k.gif"
+        }
+      >
         <source src={mediaUrl} type={"video/mp4"} />
-      </video>{" "}
+      </video>
       <div className={styles.textContainer}>
         <h3>{title}</h3>
         <ReactMarkdown>{description}</ReactMarkdown>
