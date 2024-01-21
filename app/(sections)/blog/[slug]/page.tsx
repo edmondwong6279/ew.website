@@ -14,7 +14,7 @@ export default async function BlogPage({
 }) {
   // TODO Do we need to put some sort of protection on this?
   const blogResult = await getData(
-    `blogs?filters[slug][$eq]=${params.slug}&sort[0]=postDate&populate=deep`
+    `blogs?filters[slug][$eq]=${params.slug}&sort[0]=postDate:asc&populate=deep`
   );
 
   if (blogResult.length === 0) {
