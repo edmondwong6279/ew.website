@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import cn from "classnames";
 
 import { ContextWrapper, Footer, Navigation } from "@/components";
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Footer />
         </ContextWrapper>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
