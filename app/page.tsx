@@ -42,6 +42,7 @@ export default async function Home() {
                 href={contactItem.link}
                 className={styles.link}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {contactItem.name}
               </Link>

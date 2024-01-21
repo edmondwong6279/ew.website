@@ -28,6 +28,7 @@ export async function PortfolioItem({
                 href={repositoryUrl}
                 className={styles.link}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Repo Link
               </Link>
