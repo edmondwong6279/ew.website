@@ -7,7 +7,7 @@ export type AboutPageSearchType = "about-page?populate=deep";
 export type SkillsPageSearchType = "skills-page?populate=deep";
 export type PortfolioPageSearchType = "portfolio-page?populate=deep";
 export type BlogPageSearchType = "blog-page?populate=deep";
-export type BlogManySearchType = "blogs?populate=deep";
+export type BlogManySearchType = "blogs?sort[0]=postDate:desc&populate=deep";
 export type BlogSingleSearchType =
   `blogs?filters[slug][$eq]=${string}&populate=deep`;
 

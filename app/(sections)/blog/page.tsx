@@ -12,7 +12,7 @@ export default async function Blog() {
     blogs
   ] = await Promise.all([
     getData("blog-page?populate=deep"),
-    getData("blogs?populate=deep")
+    getData("blogs?sort[0]=postDate:desc&populate=deep")
   ]);
 
   return (
@@ -24,10 +24,10 @@ export default async function Blog() {
       <div className={styles.cardsContainer}>
         {blogs.map(
           (
-            { attributes: { title, description, publishedAt, slug } },
+            { attributes: { title, description, postDate, slug } },
             idx: number
           ) => {
-            const date = new Date(publishedAt).toLocaleDateString("en-GB");
+            const date = new Date(postDate).toLocaleDateString("en-GB");
 
             return (
               <Link href={`/blog/${slug}`} key={idx} className={styles.link}>
