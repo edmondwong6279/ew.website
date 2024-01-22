@@ -32,7 +32,7 @@ export default async function Blog() {
             return (
               <Link href={`/blog/${slug}`} key={idx} className={styles.link}>
                 <div className={styles.card}>
-                  <h1 className={styles.blogTitle}>{title}</h1>
+                  <h3 className={styles.blogTitle}>{title}</h3>
                   <h5 className={styles.blogDate}>Published: {date}</h5>
                   <p>{description}</p>
                 </div>
