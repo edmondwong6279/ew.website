@@ -14,7 +14,6 @@
   .vid {
     width: 100%;
     aspect-ratio: 1 / 1;
-    box-shadow: 0 12px 20px 0px var(--shadow);
 
     @include tablet {
       float: left;
