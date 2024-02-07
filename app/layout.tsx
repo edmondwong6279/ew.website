@@ -18,7 +18,8 @@ const font = Roboto({
 export const metadata: Metadata = {
   title: "Ed/Wong",
   description: "Ed Wong's website",
-  metadataBase: new URL("https://ed-wong.vercel.app/")
+  metadataBase: new URL("https://ed-wong.vercel.app/"),
+  verification: { google: "BWruRMcykt6z0Whnhp06V06HtSvvmLmVhVKlos-jFjE" }
 };
 
 export default function RootLayout({
