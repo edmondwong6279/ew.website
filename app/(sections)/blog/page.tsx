@@ -16,7 +16,7 @@ export default async function Blog() {
   ]);
 
   return (
-    <section className={styles.blogSection}>
+    <>
       <header>
         <h2>{title}</h2>
         <p>{description}</p>
@@ -41,6 +41,6 @@ export default async function Blog() {
           }
         )}
       </div>
-    </section>
+    </>
   );
 }

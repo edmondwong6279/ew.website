@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -29,21 +28,14 @@ export default async function BlogPage({
   const postDateFormatted = new Date(postDate).toLocaleDateString("en-GB");
 
   return (
-    <section className={styles.blogSlugSection}>
-      <header>
-        <Link className={styles.link} href={"/blog"}>
-          &#8592; Back to all blogs
-        </Link>
-      </header>
-      <div className={styles.blogContainer}>
-        <div className={styles.blogHeading}>
-          <h1 className={styles.blogTitle}>{title}</h1>
-          <h5 className={styles.blogDate}>Published: {postDateFormatted}</h5>
-        </div>
-        <div className={styles.blogContent}>
-          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
-        </div>
+    <div className={styles.blogContainer}>
+      <div className={styles.blogHeading}>
+        <h1 className={styles.blogTitle}>{title}</h1>
+        <h5 className={styles.blogDate}>Published: {postDateFormatted}</h5>
       </div>
-    </section>
+      <div className={styles.blogContent}>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+      </div>
+    </div>
   );
 }
