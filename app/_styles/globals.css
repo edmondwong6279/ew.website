@@ -53,7 +53,6 @@ body[data-theme='dark'] {
 * {
   margin: 0;
   box-sizing: border-box;
-  font-weight: 400;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
 }
@@ -73,6 +72,7 @@ ul {
 body {
   display: flex;
   flex-direction: column;
+  font-weight: 400;
   justify-content: space-between;
   align-items: center;
   min-height: 100svh;
@@ -87,6 +87,10 @@ img, video {
   border-radius: 5px;
   object-fit: cover;
   box-shadow: 0 12px 20px -10px var(--shadow);
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: 400;
 }
 
 h1 {
