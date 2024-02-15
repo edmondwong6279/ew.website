@@ -65,16 +65,7 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
               className={styles.text}
               dominantBaseline="middle"
             >
-              Beginner
-            </text>
-            <text
-              y={30}
-              x={textOffset * xUnit + 5 * xUnit}
-              className={styles.text}
-              dominantBaseline="middle"
-              textAnchor="end"
-            >
-              Intermediate
+              Proficiency
             </text>
             <line
               x1={textOffset * xUnit - 5}
