@@ -2,9 +2,14 @@
 
 .blogSlugSection {
   @include pageWidthMixin;
+  justify-content: flex-start;
+  width: 100%;
 
   .blogContainer {
     @include flexCol;
+    flex: auto;
+    justify-content: center;
+    width: 100%;
     gap: 20px;
 
     .blogContent {

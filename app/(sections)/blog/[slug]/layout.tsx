@@ -10,7 +10,7 @@ export default async function BlogPage({
   return (
     <section className={styles.blogSlugSection}>
       <header>
-        <Link className={styles.link} href={"/blog"}>
+        <Link className={styles.backLink} href={"/blog"}>
           &#8592; Back to all blogs
         </Link>
       </header>

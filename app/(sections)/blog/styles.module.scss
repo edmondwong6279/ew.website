@@ -2,6 +2,7 @@
 
 .blogSection {
   @include pageWidthMixin;
+  width: 100%;
 
   .cardsContainer {
     @include cardContainer;
